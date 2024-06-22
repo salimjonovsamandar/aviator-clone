@@ -1,0 +1,29 @@
+import React from "react";
+import Footer from "../components/Footer";
+// import MoviesCarusel from "../components/MoviesCarusel";
+import Casino from "../components/Casino/index";
+import Livegame from "../components/Livegame/index";
+import Wingames from "../components/Wingames/index";
+import Card from "../components/Card/index";
+import Poker from "../components/Poker/index";
+import MainLayout from "./MainLayout";
+
+const Home: React.FC = () => {
+  return (
+    <>
+      <Card />
+      <div style={{ display: "flex" }}>
+        <Wingames />
+        <Poker />
+      </div>
+      <div style={{ display: "flex" }}>
+        <Casino />
+        <Livegame />
+      </div>
+      {/* <MoviesCarusel /> */}
+      <Footer />
+    </>
+  );
+};
+
+export default Home;
