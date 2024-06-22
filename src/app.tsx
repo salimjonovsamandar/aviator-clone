@@ -4,6 +4,7 @@ import MainLayout from "./pages/MainLayout";
 import Aviator from "./aviator";
 import Home from "./pages/home";
 
+
 interface RouteConfig {
   path: string;
   element: JSX.Element;
