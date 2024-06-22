@@ -6,13 +6,14 @@ import MyBets from "./my-bets";
 import TopHistory from "./top-history";
 import Context, { BettedUserType, UserType } from "../../context";
 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function getRandomInt(num) {
+  // min = Math.ceil(min);
+  // max = Math.floor(max);
+  // return Math.floor(Math.random() * (max - min + 1)) + min;
+  return num;
 }
 
-const randomSteps = [0, 20, 100, 300, 1000, 3000, 5000]
+const randomSteps = [0, 20, 100, 300, 1000, 3000, 5000];
 
 export default function BetsUsers() {
   const { previousHand, bettedUsers, getMyBets } = React.useContext(Context);
@@ -28,21 +29,20 @@ export default function BetsUsers() {
     { type: "my", value: "My Bets", onClick: "myBet" },
     { type: "top", value: "Top" },
   ];
-  
-  const totalCountRef = React.useRef(0)
+
+  const totalCountRef = React.useRef(0);
 
   React.useEffect(() => {
     randomSteps.forEach((step, i, arr) => {
-      if(i === arr.length - 1) return;
+      if (i === arr.length - 1) return;
       setTimeout(() => {
-        totalCountRef.current = getRandomInt(step, arr[i+1])
-      }, 300 * (i + 1))
-    } )
-  }, [bettedUsers[0]?.betAmount])
+        totalCountRef.current = getRandomInt(step);
+      }, 300 * (i + 1));
+    });
+  }, [bettedUsers[0]?.betAmount]);
 
   const getData = (e) => {
-    if (e === "myBet")
-    getMyBets();
+    if (e === "myBet") getMyBets();
   };
 
   React.useEffect(() => {
@@ -76,7 +76,12 @@ export default function BetsUsers() {
         </div>
         <div className="data-list">
           {headerType === "all" ? (
-            <AllData setPre={setPre} pre={pre} allData={allData} allUsers={totalCountRef.current} />
+            <AllData
+              setPre={setPre}
+              pre={pre}
+              allData={allData}
+              allUsers={totalCountRef.current}
+            />
           ) : headerType === "my" ? (
             <MyBets />
           ) : (

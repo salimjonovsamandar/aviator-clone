@@ -102,14 +102,21 @@ const Index: React.FC = () => {
                 "linear-gradient(90deg, rgb(0, 183, 255) 0%, rgb(199, 0, 255) 50%, rgb(255, 187, 0) 100%)",
             }}
           ></div>
-          <div className="flex justify-between items-center mb-5">
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+            className="flex justify-between items-center mb-5"
+          >
             <h2 className="text-white text-[17px]">
               Casino{" "}
               <span className="text-[12px] inline-block ml-2 opacity-50">
                 13386
               </span>
             </h2>
-            <p className="text-[11px] text-[#1a68db] cursor-pointer">All</p>
+            <p className="text-[15px] text-[#1a68db] cursor-pointer">All</p>
           </div>
           <div>
             <div
@@ -132,16 +139,6 @@ const Index: React.FC = () => {
                   src={left}
                   alt=""
                 />
-              </div>
-
-              <div
-                className=" flex items-center bg-[#94a6cd26] rounded-lg cursor-pointer hover:bg-[#e0e7f526]"
-                style={{
-                  padding: "5px 10px",
-                }}
-              >
-                <img className="w-[22px] h-[22px] mr-2 " src={gaming} alt="" />
-                <p style={{ color: "white", fontSize: "13px" }}>7777 Gaming</p>
               </div>
 
               <div
@@ -180,6 +177,15 @@ const Index: React.FC = () => {
                 />
                 <p style={{ color: "white", fontSize: "13px" }}>1win Games</p>
               </div>
+              <div
+                className=" flex items-center bg-[#94a6cd26] rounded-lg cursor-pointer hover:bg-[#e0e7f526]"
+                style={{
+                  padding: "5px 10px",
+                }}
+              >
+                <img className="w-[22px] h-[22px] mr-2 " src={gaming} alt="" />
+                <p style={{ color: "white", fontSize: "13px" }}>7777 Gaming</p>
+              </div>
 
               <div
                 className=" flex items-center bg-[#94a6cd26] rounded-lg cursor-pointer hover:bg-[#e0e7f526]"
@@ -209,7 +215,10 @@ const Index: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex justify-between flex-wrap gap-[15px]">
+          <div
+            style={{ display: "flex", justifyContent: "space-between" }}
+            className="flex justify-between flex-wrap gap-[15px]"
+          >
             {casino.map((game, index) => (
               <div className="w-[150px] cursor-pointer" key={index}>
                 <img
@@ -217,7 +226,10 @@ const Index: React.FC = () => {
                   src={game.image}
                   alt=""
                 />
-                <div className="flex items-center gap-1">
+                <div
+                  style={{ display: "flex", justifyContent: "start" }}
+                  className="flex items-center gap-1"
+                >
                   <img className="w-[16px] h-[16px]" src={game.icon} alt="" />
                   <p className="text-[11px] text-[#667697]">{game.provider}</p>
                 </div>

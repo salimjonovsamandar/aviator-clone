@@ -45,7 +45,7 @@ const wingames: Game[] = [
 const Index: React.FC = () => {
   return (
     <div>
-      <div className="p-[25px] w-[730px] bg-[#131B2E] mt-4 ml-5 rounded-2xl">
+      <div className="p-[25px] pb-[17px] w-[730px] bg-[#131B2E] mt-4 ml-5 rounded-2xl">
         <div>
           <div
             style={{
@@ -56,15 +56,22 @@ const Index: React.FC = () => {
                 "linear-gradient(90deg, rgb(27, 241, 255) 0%, rgb(8, 85, 196) 100%)",
             }}
           ></div>
-          <div className="flex justify-between items-center mb-5">
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+            className="flex justify-between items-center mb-5"
+          >
             <h2 className="text-white text-[32px] font-bold flex items-center">
               <img className="mr-4" src={wingame} alt="" />
               1win games
             </h2>
-            <p className="text-[11px] text-[#1a68db] cursor-pointer">All</p>
+            <p className="text-[15px] text-[#1a68db] cursor-pointer">All</p>
           </div>
 
-          <div className="flex justify-between flex-wrap gap-[15px]">
+          <div className="flex justify-between flex-wrap gap-[25px]">
             {wingames.map((game: Game, index: number) => (
               <div className="w-[150px] cursor-pointer" key={index}>
                 <img
@@ -72,7 +79,10 @@ const Index: React.FC = () => {
                   src={game.image}
                   alt=""
                 />
-                <div className="flex items-center gap-1">
+                <div
+                  style={{ display: "flex", justifyContent: "start" }}
+                  className="flex items-center gap-1"
+                >
                   <img className="w-[16px] h-[16px]" src={game.icon} alt="" />
                   <p className="text-[11px] text-[#667697]">{game.provider}</p>
                 </div>

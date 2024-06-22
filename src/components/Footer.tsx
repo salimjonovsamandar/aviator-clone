@@ -1,3 +1,4 @@
+import React from "react";
 import OneWinLogo from "../assets/1win-normal.svg";
 import Apple from "../assets/Apple_logo_grey.svg.png";
 import Android from "../assets/c6ab02-android-logomark.svg";
@@ -23,26 +24,28 @@ import King from "../assets/betraja.5cf6f15c0-75.png";
 import AppRoyal from "../assets/casino-mentor.f6b6387ac-172.png";
 import Best from "../assets/best-bitcoin-casino.9c1716b1a-50.png";
 import Criced from "../assets/cricket-betting-guru.cfe7d4265-500.png";
-function Footer() {
+
+const Footer: React.FC = () => {
   function scrollTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
+
   return (
     <>
-      <div className="px-10 mt-6">
+      <div className="px-10 my-6 container">
         <div className="mt-2 items-center flex gap-4">
           <img src={OneWinLogo} alt="1win logo" width={70} />
           <div className="border w-full border-gray-700 mt-2"></div>
         </div>
-        <div className="flex  mt-8 text-[12px] flex-wrap sm:justify-center ">
+        <div className="flex mt-8 text-[12px] flex-wrap sm:justify-center">
           <div className="text-white w-[180px] text-[10px]">
             <p className="text-[14px] font-[600]">24/7 support</p>
-            <p className=" text-gray-500 mt-2 w-5/6">
+            <p className="text-gray-500 mt-2 w-5/6">
               Contact us if you have any more questions
             </p>
           </div>
-          <div className="text-gray-600  text-[15px] font-[600] space-y-1">
-            <p className=" pb-8 text-[12px]">SUPPORT CONTACTS</p>
+          <div className="text-gray-600 text-[15px] font-[600] space-y-1">
+            <p className="pb-8 text-[12px]">SUPPORT CONTACTS</p>
             <p className="cursor-pointer">Technical support</p>
             <p className="cursor-pointer">Security service</p>
             <p className="cursor-pointer">Commercial offers</p>
@@ -55,7 +58,7 @@ function Footer() {
             <p className="cursor-pointer">partners@1win.pro</p>
           </div>
           <div className="text-white text-[15px] ml-14 space-y-1">
-            <p className=" text-gray-600 font-[600] pb-8 text-[12px]">
+            <p className="text-gray-600 font-[600] pb-8 text-[12px]">
               {" "}
               INFORMATION
             </p>
@@ -64,7 +67,7 @@ function Footer() {
             <p className="cursor-pointer">Mobile version</p>
             <p className="cursor-pointer">Affiliate program</p>
           </div>
-          <div className="text-white text-[15px] ml-8  space-y-1 ">
+          <div className="text-white text-[15px] ml-8 space-y-1 ">
             <p className="text-gray-700 font-[600] pb-8 text-[12px]">
               {" "}
               CATEGORIES
@@ -103,7 +106,7 @@ function Footer() {
         </div>
       </div>
       <div className="px-10 mt-16">
-        <div className="flex sm:justify-center   md:justify-between flex-wrap  items-center py-3 border-t  border-gray-700">
+        <div className="container  sm:justify-center md:justify-between flex-wrap items-center !py-3 border-t border-gray-700">
           <div className="flex gap-4 flex-wrap sm:justify-center  ">
             <img
               className="w-10 h-8 object-cover transform transition-transform duration-300 scale-100 cursor-pointer rounded-md hover:scale-110"
@@ -190,40 +193,41 @@ function Footer() {
             />
           </div>
           <div className="flex gap-4 sm:mt-2 md:mt-1">
-            <small className="bg-[#1e263d] w-12  h-8 rounded-md flex items-center justify-center">
+            <small className="bg-[#1e263d] w-12 h-8 rounded-md flex items-center justify-center">
               <small className="text-white text-[11px] mr-1 font-bold">
                 EN
               </small>
-              <img src={enFlag} className="w-5 h-5" />
+              <img src={enFlag} className="w-5 h-5" alt="English" />
             </small>
             <small className="bg-[#1e263d] w-8 h-8 rounded-md flex items-center justify-center">
-              <img src={Iphoneimg} className="w-6 h-6" />
+              <img src={Iphoneimg} className="w-6 h-6" alt="iPhone" />
             </small>
             <small
               onClick={scrollTop}
               className="bg-[#1e263d] w-8 h-8 rounded-md flex items-center justify-center cursor-pointer"
             >
-              <img src={TopUi} className="w-6 h-6" />
+              <img src={TopUi} className="w-6 h-6" alt="Scroll to Top" />
             </small>
           </div>
         </div>
       </div>
       <div className="px-4">
-        <img src={Untited} className="w-full " alt="" />
+        <img src={Untited} className="w-full" alt="United" />
       </div>
-      <div className="px-10 flex mt-4 flex-wrap justify-between">
+
+      <div className="footer-bottom">
         <p className="text-[10px] text-gray-500 font-bold">© 2024 1WIN.</p>
         <div className="flex gap-4 items-center">
-          <img src={Bookmark} width={40} alt="" height={15} />
-          <img src={King} width={35} alt="" height={15} />
-          <img src={AppRoyal} width={150} height={15} alt="" />
-          <img src={Best} width={30} height={15} alt="" />
-          <img src={Criced} width={25} alt="" height={15} />
+          <img src={Bookmark} width={40} height={15} alt="Bookmark" />
+          <img src={King} width={35} height={15} alt="King" />
+          <img src={AppRoyal} width={150} height={15} alt="AppRoyal" />
+          <img src={Best} width={30} height={15} alt="Best" />
+          <img src={Criced} width={25} height={15} alt="Criced" />
           <span className="text-gray-400 font-bold text-xl">| 18 +</span>
         </div>
       </div>
     </>
   );
-}
+};
 
 export default Footer;

@@ -1,58 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MainLayout from "./pages/MainLayout";
+import { BrowserRouter as Router, useRoutes } from "react-router-dom";
 import Aviator from "./aviator";
 import Home from "./pages/home";
 
-
-interface RouteConfig {
-  path: string;
-  element: JSX.Element;
-  children?: RouteConfig[];
-  index?: boolean;
-  errorElement?: JSX.Element;
-}
-
-const App: React.FC = () => {
-  const routes: RouteConfig[] = [
+const AppRoutes = () => {
+  const routes = [
     {
       path: "/",
       element: <Home />,
       children: [
         {
-          path: "/",
-          element: <Home />,
-          // errorElement: <ErrorElement />,
-        },
-        {
           path: "aviator",
           element: <Aviator />,
-          // errorElement: <ErrorElement />,
         },
       ],
-      // errorElement: <Error />,
     },
   ];
 
+  const element = useRoutes(routes);
+  return element;
+};
+
+const App: React.FC = () => {
   return (
     <Router>
-      <Routes>
-        {routes.map((route, index) => (
-          <Route key={index} path={route.path} element={route.element}>
-            {route.children && (
-              <Routes>
-                {route.children.map((childRoute, childIndex) => (
-                  <Route
-                    key={childIndex}
-                    path={childRoute.path}
-                    element={childRoute.element}
-                  />
-                ))}
-              </Routes>
-            )}
-          </Route>
-        ))}
-      </Routes>
+      <AppRoutes />
     </Router>
   );
 };

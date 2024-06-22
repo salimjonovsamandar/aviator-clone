@@ -1,6 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
-// import { useCrashContext } from "../Main/context";
 import "./crash.scss";
 import Unity from "react-unity-webgl";
 import propeller from "../../assets/images/propeller.png";
@@ -20,8 +18,6 @@ export default function WebGLStarter() {
   const [target, setTarget] = React.useState(1);
   const [waiting, setWaiting] = React.useState(0);
   const [flag, setFlag] = React.useState(1);
-
-  // console.log(currentNum, "==========>currentNum");
 
   React.useEffect(() => {
     let myInterval;

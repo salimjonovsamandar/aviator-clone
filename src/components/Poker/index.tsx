@@ -1,6 +1,6 @@
 import React from "react";
 import pokerImg from "../../assets/images/pokerImg.svg";
-// import backgroundImage from "../../assets/";
+import backgroundImage from "../../assets/images/home-poker.png";
 
 const Index: React.FC = () => {
   return (
@@ -33,7 +33,7 @@ const Index: React.FC = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          // backgroundImage: `url(${backgroundImage})`,
+          backgroundImage: `url(${backgroundImage})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "right",
           zIndex: 0,
@@ -42,7 +42,10 @@ const Index: React.FC = () => {
         }}
       ></div>
       <div style={{ position: "relative", zIndex: 1 }} className="mb-5 pl-3">
-        <h2 className="text-white text-[32px] font-bold flex items-center">
+        <h2
+          style={{ marginRight: "78%" }}
+          className="text-white text-left  text-[32px]  font-bold flex items-center justify-start"
+        >
           <img className="mr-4" src={pokerImg} alt="" />
           Poker
         </h2>

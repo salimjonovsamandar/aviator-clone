@@ -1,10 +1,7 @@
 import React from "react";
 import BetsUsers from "./components/bet-users";
 import Main from "./components/Main";
-import propeller from "../assets/images/propeller.png";
-import AdminHeader from "./components/admin/header";
-import Header from "./components/header";
-
+import propeller from "./assets/images/propeller.png";
 import Context from "./context";
 import Headers from "./sections/Headers";
 import Navbar from "./sections/Navbar";
@@ -12,7 +9,6 @@ import Navbar from "./sections/Navbar";
 function Aviator() {
   const { unityLoading, currentProgress, rechargeState } =
     React.useContext(Context);
-
   return (
     <>
       <div className="main-container">
@@ -20,7 +16,7 @@ function Aviator() {
           <div className="myloading">
             <div className="loading-container">
               <div className="rotation">
-                {/* <img alt="propeller" src={propeller}></img> */}
+                <img alt="propeller" src={propeller}></img>
               </div>
               <div className="waiting">
                 <div
@@ -43,13 +39,10 @@ function Aviator() {
             </div>
           </div>
         )}
-
         <Headers />
         <Navbar />
         <div className="game-container">
-          <Header />
           <BetsUsers />
-          {/* <AdminHeader /> */}
           <Main />
         </div>
       </div>

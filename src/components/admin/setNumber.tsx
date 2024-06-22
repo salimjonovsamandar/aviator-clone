@@ -5,7 +5,7 @@ import {
   getNumberFunc,
   updateNumberFunc,
   deleteNumberFunc,
-  deleteAllNumbersFunc
+  deleteAllNumbersFunc,
 } from "../../context";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
@@ -62,17 +62,16 @@ const SetNumber = () => {
   const handleClose = () => setOpen(false);
 
   const saveNumber = async () => {
-    if (typeof amount === 'string') {
-      amount.split(',').map(async (item: string | number) => {
-        item = Number(item)
+    if (typeof amount === "string") {
+      amount.split(",").map(async (item: string | number) => {
+        item = Number(item);
         if (Number(item) && Number(item) > 0) {
           await setNumberFunc(Number(item));
         }
         getRows();
         handleClose();
-      } )
+      });
     }
-    
   };
   const updateNumber = async () => {
     const data = { _id: selectedData._id, amount };
@@ -121,7 +120,11 @@ const SetNumber = () => {
         </Typography>
       </Grid>
       <Grid gap={2} container justifyContent={"flex-end"}>
-        <Button variant="contained" color="error" onClick={() => deleteAllNumbers()}>
+        <Button
+          variant="contained"
+          color="error"
+          onClick={() => deleteAllNumbers()}
+        >
           DELETE ALL
         </Button>
         <Button variant="contained" onClick={() => handleOpen(false)}>

@@ -1,5 +1,4 @@
 import React from "react";
-// import games from "../../../games.js";
 
 interface Game {
   name: string;
@@ -10,7 +9,7 @@ const card: Game[] = [
   {
     name: "TVBET",
     provider: "Live Games 24/7",
-    image: "/tvbet.png",
+    image: "./tvbet.png",
   },
   {
     name: "Casino",
@@ -34,8 +33,13 @@ const Index: React.FC = () => {
     <div className="px-[25px] flex mt-2 gap-[20px]">
       {card.map((game: Game, index: number) => (
         <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
           key={index}
-          className="flex items-center justify-between bg-[#131B2E] rounded-[12px] cursor-pointer w-[378px] h-[75px] py-1.5 px-2.5"
+          className="bg-[#131B2E] rounded-[12px] cursor-pointer w-[378px] h-[75px] py-1.5 px-2.5"
         >
           <div className="ml-4">
             <h2

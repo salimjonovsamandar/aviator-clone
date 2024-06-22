@@ -102,14 +102,21 @@ const Index: React.FC = () => {
                 "linear-gradient(90deg, rgb(255, 78, 223) 0%, rgb(255, 41, 88) 100%)",
             }}
           ></div>
-          <div className="flex justify-between items-center mb-5">
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+            className="flex justify-between items-center mb-5"
+          >
             <h2 className="text-white text-[17px]">
               Livegames{" "}
               <span className="text-[12px] inline-block ml-2 opacity-50">
                 577
               </span>
             </h2>
-            <p className="text-[11px] text-[#1a68db] cursor-pointer">All</p>
+            <p className="text-[15px] text-[#1a68db] cursor-pointer">All</p>
           </div>
           <div>
             <div
@@ -265,7 +272,10 @@ const Index: React.FC = () => {
           </div>
 
           {/* Render livegames */}
-          <div className="flex justify-between flex-wrap gap-[15px]">
+          <div
+            style={{ display: "flex", justifyContent: "space-between" }}
+            className="flex justify-between flex-wrap gap-[15px]"
+          >
             {livegames.map((game: Game, index: number) => (
               <div className="w-[150px] cursor-pointer" key={index}>
                 <img
@@ -273,7 +283,10 @@ const Index: React.FC = () => {
                   src={game.image}
                   alt=""
                 />
-                <div className="flex items-center gap-1">
+                <div
+                  style={{ display: "flex", justifyContent: "start" }}
+                  className="flex items-center gap-1"
+                >
                   <img className="w-[16px] h-[16px]" src={game.icon} alt="" />
                   <p className="text-[11px] text-[#667697]">{game.provider}</p>
                 </div>

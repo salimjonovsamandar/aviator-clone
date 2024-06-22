@@ -3,11 +3,13 @@ import "./main.scss";
 import History from "./history";
 import Crash from "../crash/index";
 import Bet from "./bet";
+import Header from "../header";
 
 export default function Main() {
   const [addBetPanel, setAddBetPanel] = React.useState(true);
   return (
-    <div className="game-play">
+    <div className="game-play mt-3">
+      <Header />
       <div className="result-history">
         <History />
       </div>
@@ -24,9 +26,9 @@ export default function Main() {
       <div className="bet-controls">
         <div className="controls">
           <Bet index={"f"} add={addBetPanel} setAdd={setAddBetPanel} />
-          {addBetPanel &&
+          {addBetPanel && (
             <Bet index={"s"} add={addBetPanel} setAdd={setAddBetPanel} />
-          }
+          )}
         </div>
       </div>
     </div>

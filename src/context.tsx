@@ -230,7 +230,7 @@ export const deleteAllNumbersFunc = async () => {
 export const addBotUserFunc = async (name: String, img: string) => {
   let response = await axios.post(`${config.api}/add-bot-user`, {
     name,
-    img
+    img,
   });
   if (response.data.status) {
     toast.success("User added successfully.");
@@ -336,7 +336,12 @@ export const Provider = ({ children }: any) => {
 
   React.useEffect(() => {
     socket.on("connect", () => {
-      socket.emit("enterRoom", { token, name: localStorage.getItem("crash_name"), image: localStorage.getItem("crash_image") || 'av-10.png', cash: localStorage.getItem('crash_cash') || 5000 });
+      socket.emit("enterRoom", {
+        token,
+        name: localStorage.getItem("crash_name"),
+        image: localStorage.getItem("crash_image") || "av-10.png",
+        cash: localStorage.getItem("crash_cash") || 5000,
+      });
     });
 
     socket.on("bettedUserInfo", (bettedUsers: BettedUserType[]) => {

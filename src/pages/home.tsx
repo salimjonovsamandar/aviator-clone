@@ -7,10 +7,23 @@ import Wingames from "../components/Wingames/index";
 import Card from "../components/Card/index";
 import Poker from "../components/Poker/index";
 import MainLayout from "./MainLayout";
+import TwoCard from "../components/TwoCard/index";
+import MoviesCarousel from "../components/MoviesCorusel";
 
 const Home: React.FC = () => {
   return (
     <>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        className=""
+      >
+        <MoviesCarousel />
+        <TwoCard />
+      </div>
       <Card />
       <div style={{ display: "flex" }}>
         <Wingames />
